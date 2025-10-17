@@ -41,6 +41,30 @@
             scroll-behavior: smooth;
         }
         
+        /* ESTILOS PARA LOS ESTADOS DE CONFIRMACIÓN */
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-badge.confirmado {
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+        }
+        
+        .status-badge.pendiente {
+            background-color: #FF9800;
+            color: white;
+            box-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
+        }
+
+        /* Resto del CSS existente... */
+        
         /* Modal de activación de audio */
         .audio-modal {
             position: fixed;
@@ -498,19 +522,23 @@
         }
         .hero h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
+            font-size: 5rem;
             color: var(--rosa-oscuro);
             margin-bottom: 30px;
             animation: fadeInUp 1.5s ease;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             max-width: 800px;
             margin: 0 auto 40px;
             animation: fadeIn 2s ease;
             line-height: 1.6;
-            font-weight: 400;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            color: #5a3d3d;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
         .scroll-down {
             position: absolute;
@@ -684,9 +712,11 @@
         }
         .countdown-message {
             margin-top: 40px;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--rosa-oscuro);
             font-style: italic;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         /* Sección ceremonia */
         .ceremony-section {
@@ -831,18 +861,30 @@
         }
         /* Sección itinerario */
         .itinerary-section {
-            background-color: var(--rosa-pastel-4);
+            background: url('https://i.pinimg.com/736x/e7/49/68/e749683759244b1abe28e2e5b036ebda.jpg') center/cover no-repeat fixed;
             text-align: center;
             position: relative;
+        }
+        .itinerary-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 0;
         }
         .itinerary-container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
         }
         .itinerary-container:hover {
             transform: translateY(-10px);
@@ -972,24 +1014,49 @@
             font-size: 1.1rem;
             font-weight: 500;
         }
-        /* Sección mensaje especial */
+        /* Mejoras para la sección Mensaje Especial */
         .message-section {
-            background-color: var(--rosa-pastel-5);
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ff9bb3" stroke-width="2"/><path d="M20,20 Q50,10 80,20 T80,80 T20,80 T20,20" fill="none" stroke="%23ff6b8b" stroke-width="1.5"/></svg>');
+            background-size: cover, 200px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 10%;
+        }
+        .message-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,5 C40,5 50,15 50,25 C50,35 40,45 30,45 C20,45 10,35 10,25 C10,15 20,5 30,5 Z" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.3"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
         }
         .message-container {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
         }
         .message-text {
             font-size: 1.5rem;
-            line-height: 1.6;
-            color: #555;
+            line-height: 1.7;
+            color: #5a3d3d;
             margin-bottom: 40px;
             position: relative;
             padding: 0 20px;
             transition: transform 0.5s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
         .message-text:hover {
             transform: scale(1.02);
@@ -998,10 +1065,12 @@
         .message-text::after {
             content: '"';
             font-size: 4rem;
-            color: var(--rosa-medio);
+            color: var(--rosa-brillante);
             position: absolute;
-            opacity: 0.5;
+            opacity: 0.7;
             transition: opacity 0.3s ease;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         .message-text::before {
             top: -30px;
@@ -1013,39 +1082,71 @@
         }
         .message-text:hover::before,
         .message-text:hover::after {
-            opacity: 0.8;
+            opacity: 0.9;
         }
         .signature {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: var(--rosa-oscuro);
             margin-top: 50px;
             transition: transform 0.5s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
         }
         .signature:hover {
             transform: scale(1.05);
         }
-        /* Sección padres */
+        
+        /* Mejoras para la sección Con la Bendición */
         .parents-section {
-            background-color: var(--rosa-pastel-1);
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                linear-gradient(135deg, var(--rosa-pastel-1) 0%, var(--rosa-pastel-2) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parents-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 2px, transparent 0),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.6) 1px, transparent 0);
+            background-size: 50px 50px, 30px 30px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.4;
+            z-index: 0;
         }
         .parents-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .parents-text {
-            font-size: 1.8rem;
-            color: #555;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #8a4b4b;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
         }
         .parents-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--rosa-oscuro);
             margin-bottom: 40px;
             transition: transform 0.5s ease;
             line-height: 1.4;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
         }
         .parents-names:hover {
             transform: scale(1.05);
@@ -1143,11 +1244,15 @@
         }
         .guestlist-message {
             margin-top: 30px;
-            padding: 15px;
+            padding: 20px;
             background-color: var(--rosa-pastel-1);
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--rosa-oscuro);
+            font-weight: 600;
+            text-align: center;
+            border: 2px solid var(--rosa-medio);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         /* Sección confirmación */
         .confirmation-section {
@@ -1175,8 +1280,15 @@
         }
         .confirmation-text {
             font-size: 1.5rem;
-            color: #555;
+            color: #5a3d3d;
             margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .confirmation-text strong {
+            color: var(--rosa-brillante);
+            font-weight: 700;
+            font-size: 1.6rem;
         }
         .whatsapp-button {
             display: inline-flex;
@@ -1227,8 +1339,10 @@
         }
         .envelopes-text {
             font-size: 1.5rem;
-            color: #555;
+            color: #5a3d3d;
             margin-bottom: 40px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
         .envelope-icon {
             font-size: 3rem;
@@ -1391,6 +1505,17 @@
         .quiz-container:hover {
             transform: translateY(-10px);
         }
+        .quiz-intro {
+            font-size: 1.3rem;
+            color: var(--rosa-oscuro);
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            background: var(--rosa-pastel-1);
+            border-radius: 10px;
+            border-left: 5px solid var(--rosa-brillante);
+        }
         .quiz-question {
             font-size: 1.5rem;
             color: var(--rosa-oscuro);
@@ -1498,6 +1623,238 @@
             line-height: 1.6;
             display: none;
         }
+        .quiz-instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--rosa-pastel-1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .quiz-instructions p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #5a3d3d;
+        }
+
+        /* NUEVA SECCIÓN: Compartir Fotos */
+        .share-photos-section {
+            background: linear-gradient(135deg, var(--rosa-pastel-2), var(--rosa-pastel-3));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .share-photos-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ff9bb3" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .photos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .photos-intro {
+            font-size: 1.4rem;
+            color: #5a3d3d;
+            margin-bottom: 50px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .photos-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .photo-option {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .photo-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-option.instagram-option:hover {
+            border-color: #E1306C;
+        }
+
+        .photo-option.whatsapp-option:hover {
+            border-color: #25D366;
+        }
+
+        .option-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-option .option-icon {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+
+        .whatsapp-option .option-icon {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .photo-option h3 {
+            font-size: 1.8rem;
+            color: var(--rosa-oscuro);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .photo-option p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .hashtag-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--rosa-pastel-1);
+            border-radius: 50px;
+            border: 2px dashed var(--rosa-medio);
+        }
+
+        .hashtag {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--rosa-brillante);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .copy-btn {
+            background: var(--rosa-oscuro);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--rosa-viejo);
+            transform: scale(1.1);
+        }
+
+        .upload-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px 0;
+            padding: 10px;
+            background: var(--rosa-pastel-1);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .upload-info i {
+            color: var(--rosa-oscuro);
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            border: 2px solid transparent;
+        }
+
+        .instagram-option .action-btn {
+            background: #E1306C;
+            color: white;
+        }
+
+        .whatsapp-option .action-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .instagram-option .action-btn:hover {
+            background: white;
+            color: #E1306C;
+            border-color: #E1306C;
+        }
+
+        .whatsapp-option .action-btn:hover {
+            background: white;
+            color: #25D366;
+            border-color: #25D366;
+        }
+
+        .photo-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .photo-option:hover::before {
+            left: 100%;
+        }
+
         /* Footer */
         footer {
             background: var(--rosa-oscuro);
@@ -1639,6 +1996,10 @@
                 bottom: 15px;
                 right: 15px;
             }
+            .photos-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
         @media (max-width: 768px) {
             .header-container {
@@ -1765,6 +2126,13 @@
             .volume-slider {
                 width: 60px;
             }
+            .photo-option {
+                padding: 30px 20px;
+            }
+            .photos-intro {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
         }
         @media (max-width: 576px) {
             .logo {
@@ -1874,6 +2242,20 @@
             .volume-control {
                 display: none;
             }
+            .photos-options {
+                grid-template-columns: 1fr;
+            }
+            .photo-option {
+                padding: 25px 15px;
+            }
+            .option-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+            .hashtag {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -1916,6 +2298,7 @@
                     <li><a href="#recepcion"><i class="fas fa-glass-cheers"></i> <span>Recepción</span></a></li>
                     <li><a href="#itinerario"><i class="fas fa-map-signs"></i> <span>Itinerario</span></a></li>
                     <li><a href="#lluvia"><i class="fas fa-envelope"></i> <span>Lluvia de Sobres</span></a></li>
+                    <li><a href="#compartir-fotos"><i class="fas fa-camera"></i> <span>Compartir Fotos</span></a></li>
                     <li><a href="#quiz"><i class="fas fa-question-circle"></i> <span>Quiz</span></a></li>
                     <li><a href="#album"><i class="fas fa-images"></i> <span>Álbum</span></a></li>
                 </ul>
@@ -1957,9 +2340,11 @@
         <div class="parents-container">
             <p class="parents-text">Con mucho amor te invitan</p>
             <div class="parents-names">
-                Marcos Alcantar y Jazzel Valdez<br>
+                Marcos Alfredo Alcantar Toledo<br>
+                y<br>
+                Jazzel Valdez García<br>
                 junto a su hija<br>
-                Ximena
+                <span style="font-size: 3.5rem;">Ximena Alcantar Valdez</span>
             </div>
         </div>
     </section>
@@ -2022,6 +2407,7 @@
                         <th data-sort="number"># <i class="fas fa-sort"></i></th>
                         <th data-sort="name">Nombre Completo <i class="fas fa-sort"></i></th>
                         <th data-sort="type">Tipo <i class="fas fa-sort"></i></th>
+                        <th data-sort="status">Confirmación <i class="fas fa-sort"></i></th>
                     </tr>
                 </thead>
                 <tbody id="guestListBody">
@@ -2039,7 +2425,9 @@
         <h2 class="section-title">Confirma tu Asistencia</h2>
         <div class="confirmation-container">
             <p class="confirmation-text">
-                Por favor confirma tu asistencia antes del 15 de Enero de 2026<br>
+                <strong>Si apareces en la lista de invitados,</strong><br>
+                Por favor confirma tu asistencia antes del 15 de enero de 2026<br>
+                <strong>"ES IMPORTANTE PARA CONSIDERAR TU PLATILLO"</strong><br><br>
                 ¡Esperamos contar con tu presencia en este día tan especial!
             </p>
             <a href="https://wa.me/4437292451?text=Hola,%20confirmo%20mi%20asistencia%20a%20tus%2015%20años" class="whatsapp-button" target="_blank">
@@ -2096,16 +2484,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-time">7:00 PM</div>
-                        <div class="timeline-event">ingreso y recepción</div>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-time">7:30 PM</div>
-                        <div class="timeline-event">entrada de la quinceañera</div>
+                        <div class="timeline-event">Ingreso y Recepción</div>
                     </div>
                     <div class="timeline-icon">
                         <i class="fas fa-glass-cheers"></i>
@@ -2113,20 +2492,29 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-time">8:00 PM</div>
-                        <div class="timeline-event">cena</div>
+                        <div class="timeline-time">7:30 PM</div>
+                        <div class="timeline-event">Entrada de la Quinceañera</div>
                     </div>
                     <div class="timeline-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">8:00 PM</div>
+                        <div class="timeline-event">Cena</div>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-utensils"></i>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-time">8:30 PM</div>
-                        <div class="timeline-event">vals</div>
+                        <div class="timeline-event">Vals</div>
                     </div>
                     <div class="timeline-icon">
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -2150,7 +2538,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-time">12:00 PM</div>
-                        <div class="timeline-event">mañanitas para la quinceañera</div>
+                        <div class="timeline-event">Mañanitas para la quinceañera</div>
                     </div>
                     <div class="timeline-icon">
                         <i class="fas fa-moon"></i>
@@ -2250,10 +2638,57 @@
         </div>
     </section>
 
-    <!-- 13. Sección Quiz (Encuesta) -->
+    <!-- 13. Sección Compartir Fotos -->
+    <section class="share-photos-section" id="compartir-fotos">
+        <h2 class="section-title">Comparte tus Momentos</h2>
+        <div class="photos-container">
+            <div class="photos-intro">
+                <p>¡Captura los momentos especiales y compártelos con nosotros! Tu participación hará este recuerdo aún más especial. Elige la opción que más te guste para compartir tus fotos.</p>
+            </div>
+            
+            <div class="photos-options">
+                <!-- Opción Instagram -->
+                <div class="photo-option instagram-option">
+                    <div class="option-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Sube tus fotos a Instagram usando nuestro hashtag oficial. Etiquétanos y usa el hashtag para que podamos ver todas tus fotos.</p>
+                    <div class="hashtag-container">
+                        <span class="hashtag">#Ximena15Años</span>
+                        <button class="copy-btn" onclick="copiarHashtag()">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <a href="https://www.instagram.com/" class="action-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> Abrir Instagram
+                    </a>
+                </div>
+
+                <!-- Opción WhatsApp -->
+                <div class="photo-option whatsapp-option">
+                    <div class="option-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Envíanos tus fotos directamente por WhatsApp. Ideal para esas fotos espontáneas y momentos especiales.</p>
+                    <div class="upload-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Máximo 10 fotos por mensaje</span>
+                    </div>
+                    <a href="https://wa.me/5214437292451?text=Hola!%20Te%20comparto%20mis%20fotos%20de%20los%2015%20años%20de%20Ximena" class="action-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Sección Quiz (Encuesta) -->
     <section class="quiz-section" id="quiz">
         <h2 class="section-title">¿Cuánto me conoces?</h2>
         <div class="quiz-container">
+            <div class="quiz-intro">¡Diviértete y responde esta encuesta para descubrir qué tan bien me conoces!</div>
             <div class="quiz-question" id="question">Pregunta</div>
             <div class="quiz-options" id="options">
                 <!-- Opciones se llenarán con JavaScript -->
@@ -2264,6 +2699,12 @@
             <div class="quiz-result" id="result"></div>
             <div class="quiz-score" id="score"></div>
             <div class="quiz-final-message" id="finalMessage"></div>
+            <div class="quiz-instructions">
+                <p><strong>Instrucciones:</strong> Haz captura de pantalla de tu resultado y envíamelo por WhatsApp para que pueda ver qué tanto me conoces.</p>
+                <a href="https://wa.me/5214437292451?text=Hola%20Ximena!%20Aquí%20está%20mi%20resultado%20del%20quiz%20de%20tus%2015%20años:" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Enviar Resultado
+                </a>
+            </div>
         </div>
     </section>
 
@@ -2471,26 +2912,26 @@
 
         // Datos de ejemplo para la lista de invitados
         const guestListData = [
-            { number: 1, name: "Ana García", type: "adult" },
-            { number: 2, name: "Carlos López", type: "adult" },
-            { number: 3, name: "María Rodríguez", type: "adult" },
-            { number: 4, name: "Juan Pérez", type: "adult" },
-            { number: 5, name: "Laura Martínez", type: "adult" },
-            { number: 6, name: "Pedro Sánchez", type: "adult" },
-            { number: 7, name: "Sofía Hernández", type: "adult" },
-            { number: 8, name: "Miguel González", type: "adult" },
-            { number: 9, name: "Isabel Díaz", type: "adult" },
-            { number: 10, name: "Javier Ruiz", type: "adult" },
-            { number: 11, name: "Elena Moreno", type: "adult" },
-            { number: 12, name: "Diego Álvarez", type: "adult" },
-            { number: 13, name: "Carmen Torres", type: "adult" },
-            { number: 14, name: "Antonio Flores", type: "adult" },
-            { number: 15, name: "Patricia Ramírez", type: "adult" },
-            { number: 16, name: "Lucía Morales", type: "child" },
-            { number: 17, name: "Jorge Jiménez", type: "child" },
-            { number: 18, name: "Marta Ortega", type: "child" },
-            { number: 19, name: "Roberto Castro", type: "child" },
-            { number: 20, name: "Sara Navarro", type: "child" }
+            { number: 1, name: "Ana García", type: "adult", status: "confirmado" },
+            { number: 2, name: "Carlos López", type: "adult", status: "pendiente" },
+            { number: 3, name: "María Rodríguez", type: "adult", status: "confirmado" },
+            { number: 4, name: "Juan Pérez", type: "adult", status: "pendiente" },
+            { number: 5, name: "Laura Martínez", type: "adult", status: "confirmado" },
+            { number: 6, name: "Pedro Sánchez", type: "adult", status: "confirmado" },
+            { number: 7, name: "Sofía Hernández", type: "adult", status: "pendiente" },
+            { number: 8, name: "Miguel González", type: "adult", status: "confirmado" },
+            { number: 9, name: "Isabel Díaz", type: "adult", status: "pendiente" },
+            { number: 10, name: "Javier Ruiz", type: "adult", status: "confirmado" },
+            { number: 11, name: "Elena Moreno", type: "adult", status: "confirmado" },
+            { number: 12, name: "Diego Álvarez", type: "adult", status: "pendiente" },
+            { number: 13, name: "Carmen Torres", type: "adult", status: "confirmado" },
+            { number: 14, name: "Antonio Flores", type: "adult", status: "pendiente" },
+            { number: 15, name: "Patricia Ramírez", type: "adult", status: "confirmado" },
+            { number: 16, name: "Lucía Morales", type: "child", status: "confirmado" },
+            { number: 17, name: "Jorge Jiménez", type: "child", status: "pendiente" },
+            { number: 18, name: "Marta Ortega", type: "child", status: "confirmado" },
+            { number: 19, name: "Roberto Castro", type: "child", status: "pendiente" },
+            { number: 20, name: "Sara Navarro", type: "child", status: "confirmado" }
         ];
 
         // Función para observar las secciones y aplicar transiciones
@@ -2534,9 +2975,13 @@
                 const typeCell = document.createElement('td');
                 typeCell.textContent = guest.type === 'adult' ? 'Platillo de Adulto' : 'Platillo de Niño';
                 
+                const statusCell = document.createElement('td');
+                statusCell.innerHTML = `<span class="status-badge ${guest.status}">${guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente'}</span>`;
+                
                 row.appendChild(numberCell);
                 row.appendChild(nameCell);
                 row.appendChild(typeCell);
+                row.appendChild(statusCell);
                 guestListBody.appendChild(row);
             });
 
@@ -2935,6 +3380,39 @@
 
         // Iniciar quiz
         loadQuestion();
+
+        // =============================================
+        // FUNCIONALIDADES PARA COMPARTIR FOTOS
+        // =============================================
+
+        // Función para copiar el hashtag al portapapeles
+        function copiarHashtag() {
+            const hashtag = '#Ximena15Años';
+            navigator.clipboard.writeText(hashtag).then(() => {
+                // Mostrar mensaje de confirmación
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalHTML = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                copyBtn.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHTML;
+                    copyBtn.style.background = 'var(--rosa-oscuro)';
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+                alert('No se pudo copiar el hashtag. Por favor cópialo manualmente: #Ximena15Años');
+            });
+        }
+
+        // Agregar el enlace al menú de navegación
+        const navMenu = document.querySelector('nav ul');
+        const sharePhotosMenuItem = document.createElement('li');
+        sharePhotosMenuItem.innerHTML = '<a href="#compartir-fotos"><i class="fas fa-camera"></i> <span>Compartir Fotos</span></a>';
+        
+        // Insertar antes del quiz en el menú
+        const quizMenuItem = document.querySelector('a[href="#quiz"]').parentElement;
+        navMenu.insertBefore(sharePhotosMenuItem, quizMenuItem);
     </script>
 </body>
 </html>
