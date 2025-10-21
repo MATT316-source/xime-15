@@ -63,8 +63,6 @@
             box-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
         }
 
-        /* Resto del CSS existente... */
-        
         /* Modal de activación de audio */
         .audio-modal {
             position: fixed;
@@ -861,7 +859,7 @@
         }
         /* Sección itinerario */
         .itinerary-section {
-            background: url('https://i.pinimg.com/736x/e7/49/68/e749683759244b1abe28e2e5b036ebda.jpg') center/cover no-repeat fixed;
+            background: url('https://i.pinimg.com/1200x/61/52/64/615264dcdf1a6eb6f8561cc829ac32e2.jpg') center/cover no-repeat fixed;
             text-align: center;
             position: relative;
         }
@@ -902,7 +900,7 @@
             width: 4px;
             background: linear-gradient(to bottom, var(--rosa-claro), var(--rosa-oscuro), var(--rosa-claro));
             transform: translateX(-50%);
-        }
+                    }
         .timeline-item {
             display: flex;
             justify-content: space-between;
@@ -1014,16 +1012,16 @@
             font-size: 1.1rem;
             font-weight: 500;
         }
-        /* Mejoras para la sección Mensaje Especial */
+        
+        /* SECCIÓN MENSAJE ESPECIAL CON EL GIF SOLICITADO */
         .message-section {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8)), 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ff9bb3" stroke-width="2"/><path d="M20,20 Q50,10 80,20 T80,80 T20,80 T20,20" fill="none" stroke="%23ff6b8b" stroke-width="1.5"/></svg>');
-            background-size: cover, 200px;
+            background: url('https://i.pinimg.com/1200x/72/d2/38/72d2386f22015cabc2a336f10fe41659.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
         }
+
         .message-section::before {
             content: '';
             position: absolute;
@@ -1031,10 +1029,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,5 C40,5 50,15 50,25 C50,35 40,45 30,45 C20,45 10,35 10,25 C10,15 20,5 30,5 Z" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.3"/></svg>');
-            opacity: 0.2;
+            background: rgba(255, 255, 255, 0.1);
             z-index: 0;
         }
+
         .message-container {
             max-width: 800px;
             margin: 0 auto;
@@ -1045,7 +1043,9 @@
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         .message-text {
             font-size: 1.5rem;
             line-height: 1.7;
@@ -1058,9 +1058,11 @@
             font-weight: 500;
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
+
         .message-text:hover {
             transform: scale(1.02);
         }
+
         .message-text::before,
         .message-text::after {
             content: '"';
@@ -1072,18 +1074,22 @@
             font-family: 'Georgia', serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .message-text::before {
             top: -30px;
             left: -10px;
         }
+
         .message-text::after {
             bottom: -60px;
             right: -10px;
         }
+
         .message-text:hover::before,
         .message-text:hover::after {
             opacity: 0.9;
         }
+
         .signature {
             font-family: 'Dancing Script', cursive;
             font-size: 3.5rem;
@@ -1093,6 +1099,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             font-weight: 700;
         }
+
         .signature:hover {
             transform: scale(1.05);
         }
@@ -1268,7 +1275,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/736x/36/89/d5/3689d5a4da802a3908bc8df68b76ee29.jpg') center/contain no-repeat;
+            background: url('https://i.pinimg.com/736x/81/4c/42/814c423b1b32e119ad1cc98ab0f75416.jpg') center/contain no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -1327,7 +1334,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/736x/24/60/7b/24607b4d2c88c41b63a819fa2a572faf.jpg') center/cover no-repeat;
+            background: url('https://i.pinimg.com/1200x/81/d7/37/81d7370332f9bc86d07cd835f3515530.jpg') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -1487,7 +1494,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/736x/6b/93/fa/6b93fa653eeebeea2835d3d2bd2be7a2.jpg') center/contain no-repeat;
+            background: url('https://i.pinimg.com/736x/a1/3a/56/a13a56a6165def62e202ebe2f0cbd6cd.jpg') center/contain no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -2643,7 +2650,7 @@
         <h2 class="section-title">Comparte tus Momentos</h2>
         <div class="photos-container">
             <div class="photos-intro">
-                <p>¡Captura los momentos especiales y compártelos con nosotros! Tu participación hará este recuerdo aún más especial. Elige la opción que más te guste para compartir tus fotos.</p>
+                <p>¡Captura los momentos especiales y compártelos con nosotros! Usa el hashtag <strong>#mis15_ximena</strong> para que todos podamos ver tus fotos. Tu participación hará este recuerdo aún más especial.</p>
             </div>
             
             <div class="photos-options">
@@ -2655,7 +2662,7 @@
                     <h3>Instagram</h3>
                     <p>Sube tus fotos a Instagram usando nuestro hashtag oficial. Etiquétanos y usa el hashtag para que podamos ver todas tus fotos.</p>
                     <div class="hashtag-container">
-                        <span class="hashtag">#Ximena15Años</span>
+                        <span class="hashtag">#mis15_ximena</span>
                         <button class="copy-btn" onclick="copiarHashtag()">
                             <i class="fas fa-copy"></i>
                         </button>
@@ -2757,7 +2764,7 @@
 
     <script>
         // =============================================
-        // SISTEMA DE AUDIO OPTIMIZADO PARA GITHUB PAGES
+        // SISTEMA DE AUDIO OPTIMIZADO
         // =============================================
 
         // Elementos del DOM
@@ -2775,8 +2782,6 @@
         // Variables de estado
         let isMusicPlaying = false;
         let isAudioMinimized = false;
-        let audioSourcesTried = 0;
-        const maxAudioSources = 3;
 
         // Función para activar el audio
         function activateAudio() {
@@ -2790,7 +2795,7 @@
             playAudio();
         }
 
-        // Función para reproducir audio con manejo de errores
+        // Función para reproducir audio
         function playAudio() {
             backgroundMusic.volume = volumeSlider.value / 100;
             
@@ -2803,23 +2808,12 @@
                     updatePlayPauseButton();
                     audioLoading.style.display = 'none';
                     audioError.style.display = 'none';
-                    console.log('🎵 Audio reproducido exitosamente');
                 }).catch(error => {
                     // Error en la reproducción
                     console.error('Error al reproducir audio:', error);
-                    audioSourcesTried++;
-                    
-                    if (audioSourcesTried < maxAudioSources) {
-                        // Intentar con otra fuente automáticamente
-                        console.log(`Intentando con fuente alternativa ${audioSourcesTried + 1}`);
-                        setTimeout(playAudio, 500);
-                    } else {
-                        // Todas las fuentes fallaron
-                        audioLoading.style.display = 'none';
-                        audioError.style.display = 'block';
-                        audioError.textContent = 'No se pudo cargar la música';
-                        console.error('Todas las fuentes de audio fallaron');
-                    }
+                    audioLoading.style.display = 'none';
+                    audioError.style.display = 'block';
+                    audioError.textContent = 'No se pudo cargar la música';
                 });
             }
         }
@@ -2878,33 +2872,6 @@
         musicControl.addEventListener('click', togglePlayPause);
         volumeSlider.addEventListener('input', updateVolume);
         audioToggle.addEventListener('click', toggleAudioPlayer);
-
-        // Manejar eventos del elemento de audio
-        backgroundMusic.addEventListener('loadstart', function() {
-            audioLoading.style.display = 'block';
-        });
-
-        backgroundMusic.addEventListener('canplay', function() {
-            audioLoading.style.display = 'none';
-            audioError.style.display = 'none';
-        });
-
-        backgroundMusic.addEventListener('error', function() {
-            audioLoading.style.display = 'none';
-            audioError.style.display = 'block';
-        });
-
-        // Inicializar cuando la página cargue
-        window.addEventListener('load', function() {
-            // Mostrar el modal de activación de audio
-            audioModal.style.display = 'flex';
-            
-            // Inicializar otras funciones
-            createBubbleHearts();
-            observeSections();
-            loadGuestList();
-            setupGuestFilters();
-        });
 
         // =============================================
         // RESTO DEL CÓDIGO (FUNCIONALIDADES EXISTENTES)
@@ -3149,7 +3116,7 @@
 
         // Contador regresivo con efecto de latido mejorado
         function updateCountdown() {
-            const eventDate = new Date('Febrero 07, 2026 13:00:00').getTime();
+            const eventDate = new Date('February 07, 2026 19:00:00').getTime();
             const now = new Date().getTime();
             const distance = eventDate - now;
             
@@ -3310,8 +3277,8 @@
                 score++;
             }
 
-            feedbackElement.textContent = isCorrect ? 
-                "¡Correcto! " + question.explanation : 
+            feedbackElement.textContent = isCorrect ?
+                "¡Correcto! " + question.explanation :
                 "Incorrecto. " + question.explanation;
             feedbackElement.classList.add(isCorrect ? 'feedback-correct' : 'feedback-incorrect');
         }
@@ -3387,7 +3354,7 @@
 
         // Función para copiar el hashtag al portapapeles
         function copiarHashtag() {
-            const hashtag = '#Ximena15Años';
+            const hashtag = '#mis15_ximena';
             navigator.clipboard.writeText(hashtag).then(() => {
                 // Mostrar mensaje de confirmación
                 const copyBtn = document.querySelector('.copy-btn');
@@ -3401,18 +3368,21 @@
                 }, 2000);
             }).catch(err => {
                 console.error('Error al copiar: ', err);
-                alert('No se pudo copiar el hashtag. Por favor cópialo manualmente: #Ximena15Años');
+                alert('No se pudo copiar el hashtag. Por favor cópialo manualmente: #mis15_ximena');
             });
         }
 
-        // Agregar el enlace al menú de navegación
-        const navMenu = document.querySelector('nav ul');
-        const sharePhotosMenuItem = document.createElement('li');
-        sharePhotosMenuItem.innerHTML = '<a href="#compartir-fotos"><i class="fas fa-camera"></i> <span>Compartir Fotos</span></a>';
-        
-        // Insertar antes del quiz en el menú
-        const quizMenuItem = document.querySelector('a[href="#quiz"]').parentElement;
-        navMenu.insertBefore(sharePhotosMenuItem, quizMenuItem);
+        // Inicializar cuando la página cargue
+        window.addEventListener('load', function() {
+            // Mostrar el modal de activación de audio
+            audioModal.style.display = 'flex';
+            
+            // Inicializar otras funciones
+            createBubbleHearts();
+            observeSections();
+            loadGuestList();
+            setupGuestFilters();
+        });
     </script>
 </body>
 </html>
