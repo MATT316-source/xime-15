@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis 15 Años - Ximena</title>
     
-    <!-- ========== META TAGS OPTIMIZADOS WHATSAPP ========== -->
+    <!-- ========== META TAGS AGREGADOS PARA COMPARTIR CON IMAGEN ========== -->
     <meta property="og:title" content="Mis 15 Años - Ximena">
-    <meta property="og:description" content="¡Te invito a mis 15 años! 7 de Febrero 2026 - Morelia, Michoacán">
-    <meta property="og:image" content="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg?v=3">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:description" content="¡Estás cordialmente invitado a celebrar mis 15 años! 7 de Febrero 2026">
+    <meta property="og:image" content="https://raw.githubusercontent.com/matt316-source/xime-15/main/imagenpararchinvitacion.jpg">
     <meta property="og:url" content="https://matt316-source.github.io/xime-15/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mis 15 Años - Ximena">
-
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mis 15 Años - Ximena">
-    <meta name="twitter:description" content="¡Te invito a mis 15 años! 7 de Febrero 2026">
-    <meta name="twitter:image" content="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg?v=3">
-
-    <meta name="description" content="Invitación 15 años Ximena - 7 Febrero 2026 - Morelia Michoacán">
-    <!-- ========== FIN META TAGS ========== -->
+    <meta name="twitter:description" content="¡Estás cordialmente invitado a celebrar mis 15 años!">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/matt316-source/xime-15/main/imagenpararchinvitacion.jpg">
+    
+    <meta name="description" content="Invitación para los 15 años de Ximena - 7 de Febrero 2026">
+    <!-- ========== FIN DE META TAGS AGREGADOS ========== -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -487,7 +486,7 @@
                 opacity: 0;
             }
         }
-        /* Hero Section mejorada */
+        /* Hero Section mejorada - FONDO ADAPTADO */
         .hero {
             height: 100vh;
             display: flex;
@@ -498,24 +497,32 @@
             padding: 0 20px;
             position: relative;
             overflow: hidden;
-            margin-top: 70px;
+            margin-top: 90px;
             transition: all 0.8s ease;
+            /* Propiedades agregadas para mejor manejo de la imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(255,214,224,0.4) 0%, rgba(255,155,179,0.3) 100%), url("https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg") center/cover no-repeat;
-        opacity: 0.5;
-        z-index: -1;
-        }
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(135deg, rgba(255,214,224,0.4) 0%, rgba(255,155,179,0.3) 100%), 
+            url("piclumen-1762370993641.png") center/contain no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+            }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 200;
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
@@ -1124,12 +1131,12 @@
             transform: scale(1.05);
         }
         
-        /* Mejoras para la sección Con la Bendición */
+        /* Mejoras para la sección Con la Bendición - FONDO MEJORADO */
         .parents-section {
             background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 182, 193, 0.5) 0%, transparent 50%),
                 linear-gradient(135deg, var(--rosa-pastel-1) 0%, var(--rosa-pastel-2) 100%);
             text-align: center;
             position: relative;
@@ -1144,11 +1151,11 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 2px, transparent 0),
-                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.6) 1px, transparent 0);
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.9) 2px, transparent 0),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.7) 1px, transparent 0);
             background-size: 50px 50px, 30px 30px;
             background-position: 0 0, 25px 25px;
-            opacity: 0.4;
+            opacity: 0.6;
             z-index: 0;
         }
         .parents-container {
@@ -1663,7 +1670,7 @@
             color: #5a3d3d;
         }
 
-        /* NUEVA SECCIÓN: Compartir Fotos */
+        /* NUEVA SECCIÓN: Compartir Fotos - SOLO WHATSAPP */
         .share-photos-section {
             background: linear-gradient(135deg, var(--rosa-pastel-2), var(--rosa-pastel-3));
             text-align: center;
@@ -1685,7 +1692,7 @@
         }
 
         .photos-container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -1706,9 +1713,8 @@
         }
 
         .photos-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            display: flex;
+            justify-content: center;
             margin-top: 40px;
         }
 
@@ -1721,18 +1727,13 @@
             position: relative;
             overflow: hidden;
             border: 2px solid transparent;
+            max-width: 500px;
+            width: 100%;
         }
 
         .photo-option:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .photo-option.instagram-option:hover {
-            border-color: #E1306C;
-        }
-
-        .photo-option.whatsapp-option:hover {
             border-color: #25D366;
         }
 
@@ -1746,14 +1747,6 @@
             justify-content: center;
             font-size: 2.5rem;
             transition: all 0.3s ease;
-        }
-
-        .instagram-option .option-icon {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: white;
-        }
-
-        .whatsapp-option .option-icon {
             background: linear-gradient(45deg, #25D366, #128C7E);
             color: white;
         }
@@ -1838,14 +1831,6 @@
             transition: all 0.3s ease;
             margin-top: 15px;
             border: 2px solid transparent;
-        }
-
-        .instagram-option .action-btn {
-            background: #E1306C;
-            color: white;
-        }
-
-        .whatsapp-option .action-btn {
             background: #25D366;
             color: white;
         }
@@ -1853,15 +1838,6 @@
         .action-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .instagram-option .action-btn:hover {
-            background: white;
-            color: #E1306C;
-            border-color: #E1306C;
-        }
-
-        .whatsapp-option .action-btn:hover {
             background: white;
             color: #25D366;
             border-color: #25D366;
@@ -2361,7 +2337,7 @@
         </div>
     </section>
 
-    <!-- 3. Sección Con la Bendición -->
+    <!-- 3. Sección Con la Bendición - FONDO MEJORADO -->
     <section class="parents-section" id="bendicion">
         <h2 class="section-title">Con la bendición de Dios</h2>
         <div class="parents-container">
@@ -2665,40 +2641,22 @@
         </div>
     </section>
 
-    <!-- 13. Sección Compartir Fotos -->
+    <!-- 13. Sección Compartir Fotos - SOLO WHATSAPP -->
     <section class="share-photos-section" id="compartir-fotos">
         <h2 class="section-title">Comparte tus Momentos</h2>
         <div class="photos-container">
             <div class="photos-intro">
-                <p>¡Captura los momentos especiales y compártelos con nosotros! Usa el hashtag <strong>#mis15_ximena</strong> para que todos podamos ver tus fotos. Tu participación hará este recuerdo aún más especial.</p>
+                <p>¡Captura los momentos especiales y compártelos con nosotros! Envíanos tus fotos directamente por WhatsApp para que podamos ver todos los recuerdos de este día tan especial.</p>
             </div>
             
             <div class="photos-options">
-                <!-- Opción Instagram -->
-                <div class="photo-option instagram-option">
-                    <div class="option-icon">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <h3>Instagram</h3>
-                    <p>Sube tus fotos a Instagram usando nuestro hashtag oficial. Etiquétanos y usa el hashtag para que podamos ver todas tus fotos.</p>
-                    <div class="hashtag-container">
-                        <span class="hashtag">#mis15_ximena</span>
-                        <button class="copy-btn" onclick="copiarHashtag()">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <a href="https://www.instagram.com/" class="action-btn" target="_blank">
-                        <i class="fab fa-instagram"></i> Abrir Instagram
-                    </a>
-                </div>
-
-                <!-- Opción WhatsApp -->
-                <div class="photo-option whatsapp-option">
+                <!-- Solo opción WhatsApp -->
+                <div class="photo-option">
                     <div class="option-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <h3>WhatsApp</h3>
-                    <p>Envíanos tus fotos directamente por WhatsApp. Ideal para esas fotos espontáneas y momentos especiales.</p>
+                    <p>Envíanos tus fotos directamente por WhatsApp. Ideal para esas fotos espontáneas y momentos especiales que quieras compartir con nosotros.</p>
                     <div class="upload-info">
                         <i class="fas fa-info-circle"></i>
                         <span>Máximo 10 fotos por mensaje</span>
